@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Plus Jakarta Sans", sans-serif;
+    --font-body: "Plus Jakarta Sans", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+    --radius: 0.375rem;
+
+    --background: 0.08 0 0;
+    --foreground: 0.95 0 0;
+    --card: 0.12 0 0;
+    --card-foreground: 0.95 0 0;
+    --popover: 0.15 0 0;
+    --popover-foreground: 0.95 0 0;
+
+    /* Primary: bold red #CC0000 → oklch(0.48 0.25 27) */
+    --primary: 0.48 0.25 27;
+    --primary-foreground: 0.95 0 0;
+
+    /* Secondary: golden yellow #FFD700 → oklch(0.87 0.18 92) */
+    --secondary: 0.87 0.18 92;
+    --secondary-foreground: 0.08 0 0;
+    --muted: 0.28 0 0;
+    --muted-foreground: 0.65 0 0;
+
+    --accent: 0.87 0.18 92;
+    --accent-foreground: 0.08 0 0;
+
+    --destructive: 0.48 0.25 27;
+    --destructive-foreground: 0.95 0 0;
+
+    --border: 0.2 0 0;
+    --input: 0.15 0 0;
+    --ring: 0.87 0.18 92;
+
+    --chart-1: 0.48 0.25 27;
+    --chart-2: 0.87 0.18 92;
+    --chart-3: 0.72 0.18 120;
+    --chart-4: 0.5 0.22 40;
+    --chart-5: 0.6 0.2 280;
+
+    --sidebar: 0.12 0 0;
+    --sidebar-foreground: 0.95 0 0;
+    --sidebar-primary: 0.48 0.25 27;
+    --sidebar-primary-foreground: 0.95 0 0;
+    --sidebar-accent: 0.87 0.18 92;
+    --sidebar-accent-foreground: 0.08 0 0;
+    --sidebar-border: 0.2 0 0;
+    --sidebar-ring: 0.87 0.18 92;
+  }
+
+  .dark {
+    --background: 0.08 0 0;
+    --foreground: 0.95 0 0;
+    --card: 0.12 0 0;
+    --card-foreground: 0.95 0 0;
+    --popover: 0.15 0 0;
+    --popover-foreground: 0.95 0 0;
+
+    --primary: 0.48 0.25 27;
+    --primary-foreground: 0.95 0 0;
+
+    --secondary: 0.87 0.18 92;
+    --secondary-foreground: 0.08 0 0;
+    --muted: 0.28 0 0;
+    --muted-foreground: 0.65 0 0;
+
+    --accent: 0.87 0.18 92;
+    --accent-foreground: 0.08 0 0;
+
+    --destructive: 0.48 0.25 27;
+    --destructive-foreground: 0.95 0 0;
+
+    --border: 0.2 0 0;
+    --input: 0.15 0 0;
+    --ring: 0.87 0.18 92;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: #111111;
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* Red primary glow */
+  .glow-primary {
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.35);
+    transition: box-shadow 0.3s ease;
+  }
+  .glow-primary:hover {
+    box-shadow: 0 0 35px rgba(204, 0, 0, 0.65), 0 0 60px rgba(204, 0, 0, 0.2);
+  }
+
+  /* Golden yellow secondary glow */
+  .glow-secondary {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+  }
+  .glow-secondary:hover {
+    box-shadow: 0 0 35px rgba(255, 215, 0, 0.6), 0 0 60px rgba(255, 215, 0, 0.2);
+  }
+
+  /* Red → Yellow → White gradient text */
+  .text-gradient {
+    background: linear-gradient(135deg, #cc0000 0%, #ffd700 55%, #ffffff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-red {
+    background: linear-gradient(135deg, #cc0000, #ff4400);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .neon-border-red {
+    border: 1px solid rgba(204, 0, 0, 0.4);
+    box-shadow: inset 0 0 20px rgba(204, 0, 0, 0.05), 0 0 20px
+      rgba(204, 0, 0, 0.1);
+  }
+
+  /* Replaced cyan with golden yellow */
+  .neon-border-gold {
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.05), 0 0 20px
+      rgba(255, 215, 0, 0.1);
+  }
+
+  /* Keep cyan alias for backward compat but map to gold */
+  .neon-border-cyan {
+    border: 1px solid rgba(255, 215, 0, 0.35);
+    box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.04), 0 0 20px
+      rgba(255, 215, 0, 0.08);
+  }
+
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(204, 0, 0, 0.4),
+      rgba(255, 215, 0, 0.35),
+      transparent
+    );
+  }
+
+  .font-display {
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
+  .font-body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(204, 0, 0, 0.6), 0 0 80px rgba(255, 215, 0, 0.15);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes particle-drift {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(20px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}

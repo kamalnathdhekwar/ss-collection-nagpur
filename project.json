@@ -1,0 +1,29 @@
+{
+  "overview": "A modern, fully responsive, highly animated promotional website for SS Collection Nagpur — a multi-brand offline retail store selling Nike, Puma, and Reebok shoes, clothing, and sports gear. Features a dark theme with neon accents, glassmorphism, and Framer Motion animations throughout.",
+  "features": [
+    "Hero section with animated gradient background and CTA buttons",
+    "Brand showcase with glow and scale-hover effects for Nike, Puma, Reebok",
+    "Product categories (Shoes, Clothing, Sports Gear) with distinct hover animations and discount badges",
+    "Masonry gallery with hover zoom overlay",
+    "Store locations section highlighting 6 branches across Nagpur, Chhattisgarh, and MP",
+    "Instagram social proof section with mock feed grid and 97K+ follower count",
+    "About and Footer sections with WhatsApp and Instagram links",
+    "Sticky navbar with animated mobile hamburger menu",
+    "Framer Motion scroll reveals, hover effects, ripple/glow buttons throughout",
+    "Fully responsive mobile-first design with glassmorphism and neon accents"
+  ],
+  "category": "marketing-promotions",
+  "tags": [
+    "promotional",
+    "retail",
+    "shoes",
+    "clothing",
+    "sports",
+    "dark-theme",
+    "framer-motion",
+    "animated",
+    "responsive",
+    "glassmorphism"
+  ],
+  "last_updated": "2026-04-19T19:04:43.977Z"
+}
