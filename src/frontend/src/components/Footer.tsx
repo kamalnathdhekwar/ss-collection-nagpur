@@ -198,15 +198,15 @@ export default function Footer() {
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
             © {year} SS Collection Nagpur. All rights reserved.
           </p>
-          <p className="text-xs" style={{ color: "rgba(255,255,255,0.25)" }}>
-            Built with love using{" "}
-            <a
-              href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(hostname)}`}
+         <p className="text-salon-text-secondary text-xs">
+            Built with ❤️ By{" "}
+           <a
+              href={`https://www.instagram.com/kamalnath_06/`}
+              className="text-gold hover:text-gold-light transition-colors"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white transition-colors underline underline-offset-2"
             >
-              caffeine.ai
+             Kamalnath Dhekwar 🧑‍💻
             </a>
           </p>
         </div>
